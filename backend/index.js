@@ -12,6 +12,9 @@ mongoose
 
 const app = express();
 app.use(express.json());
+
+app.use(express.static('../frontend'));
+
 app.use('/api', routes);
 
 // Start the server

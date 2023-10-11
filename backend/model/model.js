@@ -28,5 +28,27 @@ const recommendationSchema = new mongoose.Schema({
 });
 
 const Recommendation = mongoose.model('Recommendation', recommendationSchema);
-
 module.exports = Recommendation;
+
+const projectSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  tags: [String],
+  date: {
+    type: String,
+    required: true,
+  },
+  Image: {
+    data: Buffer,
+    contentType: String,
+  },
+});
+
+const Project = mongoose.model('Project', projectSchema);
+module.exports = Project;
